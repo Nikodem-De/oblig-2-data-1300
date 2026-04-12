@@ -19,7 +19,7 @@ def main():
                 height = float(input("Enter height (m): "))
                 r = Health(name, weight, height)
                 records.append(r)
-                save_records(records) # Zapis natychmiastowy po dodaniu
+                save_records(records) 
                 print(f"Added {r.name}: BMI {r.bmi} ({r.get_category()}) | Ideal: {r.get_ideal_weight()}kg | Advice: {r.get_health_advice()}")
             except ValueError:
                 print("Invalid input, please try again")
