@@ -1,13 +1,13 @@
 class Health:
     def __init__(self, name: str, weight_kg: float, height_m: float):
-        # Walidacja: nazwa nie może być pusta, a waga i wzrost muszą być dodatnie
+        
         if not name.strip() or weight_kg <= 0 or height_m <= 0:
             raise ValueError("Invalid input, please try again")
         
         self.name = name
         self.weight_kg = weight_kg
         self.height_m = height_m
-        # Obliczanie BMI i zaokrąglanie do 2 miejsc po przecinku
+       
         self.bmi = round(weight_kg / (height_m ** 2), 2)
 
     def get_category(self) -> str:
@@ -27,5 +27,5 @@ class Health:
         return advice[cat]
 
     def get_ideal_weight(self) -> float:
-        # Formula: 22 * height^2
+      
         return round(22 * (self.height_m ** 2), 1)
