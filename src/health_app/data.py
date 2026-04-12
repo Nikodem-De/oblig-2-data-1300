@@ -17,7 +17,7 @@ def load_records(filename="health_records.json") -> list[Health]:
     try:
         with open(filename, "r") as f:
             data = json.load(f)
-            # Zamieniamy dane z JSON z powrotem na obiekty klasy Health
+           
             return [Health(d["name"], d["weight_kg"], d["height_m"]) for d in data]
     except (FileNotFoundError, json.JSONDecodeError):
         return []
